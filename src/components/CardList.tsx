@@ -3,16 +3,17 @@ import { CompanySearch } from '../interfaces/company.interface';
 import { v4 } from 'uuid';
 
 interface Props {
-  searchResult: CompanySearch[]
+  searchResult: CompanySearch[];
+  addToPortfolio: (e: React.BaseSyntheticEvent) => void;
 }
 
-const CardList = ({ searchResult }: Props) => {
+const CardList = ({ searchResult, addToPortfolio }: Props) => {
   return (
     <div>
       { searchResult.length > 0 ? ( 
           searchResult.map((company) => {
             return (
-              <Card key={v4()} id={company.symbol} company={company} />
+              <Card key={v4()} id={company.symbol} company={company} addToPortfolio={addToPortfolio}/>
             );
           })
         ) : (
