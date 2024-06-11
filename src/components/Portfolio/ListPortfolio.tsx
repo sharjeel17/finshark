@@ -1,16 +1,17 @@
-import React from 'react'
+
 import CardPortfolio from './CardPortfolio'
 
 type Props = {
-    portfolioValues: string[]
+    portfolioValues: string[];
+    deleteFromPortfolio: (e: React.BaseSyntheticEvent) => void;
 }
 
-const ListPortfolio = ({ portfolioValues }: Props) => {
+const ListPortfolio = ({ portfolioValues, deleteFromPortfolio }: Props) => {
   return (
     <div>
         {portfolioValues.map((portfolioValue) => {
             return (
-                <CardPortfolio key={portfolioValue} portfolioValue={portfolioValue}/>
+                <CardPortfolio key={portfolioValue} portfolioValue={portfolioValue} deleteFromPortfolio={deleteFromPortfolio}/>
             )
         })}
     </div>

@@ -10,16 +10,22 @@ interface Props {
 const CardList = ({ searchResult, addToPortfolio }: Props) => {
   return (
     <div>
-      { searchResult.length > 0 ? ( 
-          searchResult.map((company) => {
-            return (
-              <Card key={v4()} id={company.symbol} company={company} addToPortfolio={addToPortfolio}/>
-            );
-          })
-        ) : (
-          <h3> No Result </h3>
-        )}
-        
+      {searchResult.length > 0 ? (
+        searchResult.map((result) => {
+          return (
+            <Card
+              id={result.symbol}
+              key={v4()}
+              company={result}
+              addToPortfolio={addToPortfolio}
+            />
+          );
+        })
+      ) : (
+        <p className="mb-3 mt-3 text-xl font-semibold text-center md:text-xl">
+          No results!
+        </p>
+      )}
     </div>
   )
 }
