@@ -28,7 +28,7 @@ function App() {
   
   return (
     <>
-    <Navbar />
+      <Navbar />
       <SearchBar setSearchResult={setSearchResult}/>
       <ListPortfolio portfolioValues={portfolioValues} deleteFromPortfolio={deleteFromPortfolio} />
       <CardList searchResult={searchResult} addToPortfolio={addToPortfolio}/>

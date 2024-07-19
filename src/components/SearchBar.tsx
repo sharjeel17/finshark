@@ -38,7 +38,7 @@ const SearchBar: React.FC<Props> = ({ setSearchResult }: Props): JSX.Element => 
       <section className="relative bg-gray-100">
         <div className="max-w-4xl mx-auto p-6 space-y-6">
           <form
-            className="form relative flex flex-col w-full p-4 space-y-4 bg-darkBlue rounded-[20px] md:flex-row md:space-y-0 md:space-x-3"
+            className="relative flex flex-col w-full p-4 space-y-4 bg-darkBlue rounded-[20px] md:flex-row md:space-y-0 md:space-x-3"
             onSubmit={onSearchSubmit}
           >
             <input
