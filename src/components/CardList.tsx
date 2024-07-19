@@ -3,15 +3,15 @@ import { CompanySearch } from '../interfaces/company.interface';
 import { v4 } from 'uuid';
 
 interface Props {
-  searchResult: CompanySearch[];
+  searchResults: CompanySearch[];
   addToPortfolio: (e: React.BaseSyntheticEvent) => void;
 }
 
-const CardList = ({ searchResult, addToPortfolio }: Props) => {
+const CardList = ({ searchResults, addToPortfolio }: Props) => {
   return (
     <div>
-      {searchResult.length > 0 ? (
-        searchResult.map((result) => {
+      {searchResults.length > 0 ? (
+        searchResults.map((result) => {
           return (
             <Card
               id={result.symbol}

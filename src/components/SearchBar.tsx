@@ -3,10 +3,10 @@ import { searchCompanies } from '../api/FinancialApi';
 import { CompanySearch } from '../interfaces/company.interface';
 
 interface Props {
-  setSearchResult: (result: CompanySearch[]) => void;
+  setSearchResults: (result: CompanySearch[]) => void;
 }
 
-const SearchBar: React.FC<Props> = ({ setSearchResult }: Props): JSX.Element => {
+const SearchBar: React.FC<Props> = ({ setSearchResults }: Props): JSX.Element => {
 
   const [search, setSearch] = useState<string>("");
   const [searchError, setSearchError] = useState<string>("");
@@ -28,7 +28,7 @@ const SearchBar: React.FC<Props> = ({ setSearchResult }: Props): JSX.Element => 
     } 
     else if (Array.isArray(result.data)){
       setSearchError("");
-      setSearchResult(result.data);
+      setSearchResults(result.data);
     }
     
   }
