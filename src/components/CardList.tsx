@@ -1,6 +1,6 @@
-import Card from './Card';
-import { CompanySearch } from '../interfaces/company.interface';
-import { v4 } from 'uuid';
+import Card from "./Card";
+import { CompanySearch } from "../interfaces/company.interface";
+import { v4 } from "uuid";
 
 interface Props {
   searchResults: CompanySearch[];
@@ -27,7 +27,7 @@ const CardList = ({ searchResults, addToPortfolio }: Props) => {
         </p>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default CardList
+export default CardList;

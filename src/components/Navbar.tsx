@@ -9,9 +9,9 @@ const Navbar = (props: Props) => {
       <div className="flex items-center justify-between container mx-auto">
         <div className="flex items-center space-x-20">
           <Link to="/">
-            <img src={logo} alt="finshark logo"/>
+            <img src={logo} alt="finshark logo" />
           </Link>
-          
+
           <div className="font-bold flex">
             <Link to="/search" className="text-black hover:text-darkBlue">
               Search

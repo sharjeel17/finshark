@@ -1,37 +1,33 @@
-import React, { useState } from 'react'
-import { searchCompanies } from '../api/FinancialApi';
-import { CompanySearch } from '../interfaces/company.interface';
+import React, { useState } from "react";
+import { searchCompanies } from "../api/FinancialApi";
+import { CompanySearch } from "../interfaces/company.interface";
 
 interface Props {
   setSearchResults: (result: CompanySearch[]) => void;
 }
 
-const SearchBar: React.FC<Props> = ({ setSearchResults }: Props): JSX.Element => {
-
+const SearchBar: React.FC<Props> = ({
+  setSearchResults,
+}: Props): JSX.Element => {
   const [search, setSearch] = useState<string>("");
   const [searchError, setSearchError] = useState<string>("");
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setSearch(e.target.value);
-  }
-  
+  };
+
   const onSearchSubmit = async (e: React.BaseSyntheticEvent) => {
     e.preventDefault();
     const result = await searchCompanies(search);
-    console.log(result);
 
-    if(typeof result === "string"){
-      setSearchError(result)
-      console.log(searchError);
-
-    } 
-    else if (Array.isArray(result.data)){
+    if (typeof result === "string") {
+      setSearchError(result);
+    } else if (Array.isArray(result.data)) {
       setSearchError("");
       setSearchResults(result.data);
     }
-    
-  }
+  };
 
   return (
     <>
@@ -51,11 +47,9 @@ const SearchBar: React.FC<Props> = ({ setSearchResults }: Props): JSX.Element =>
           </form>
         </div>
       </section>
-      <div>
-        {searchError && <h2>{searchError}</h2>}
-      </div>
+      <div>{searchError && <h2>{searchError}</h2>}</div>
     </>
-  )
-}
+  );
+};
 
 export default SearchBar;
